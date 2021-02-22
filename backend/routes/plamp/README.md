@@ -11,7 +11,7 @@ Request Body:
 Response:
 * `200` New plamp successfully added to Firebase Realtime Database (RTDB)
 * `400` Request is missing a name or user
-* `500` Firebase RTDB error
+* `500` Generic Firebase RTDB error
 
 Response Body: 
 *     {
@@ -27,8 +27,12 @@ Response Body:
       }
 
 ### GET `/plamp/{id}`
-Request Body: 
-* ``
+Request Body: -
+
+Response:
+* `200`Successfully found and returned a JSON-formatted plamp from Firebase RTDB
+* `404`Plamp not found on Firebase RTDB
+* `500` Generic Firebase RTDB error
 
 ### PUT `/plamp/{id}`
 Request Body:
@@ -37,4 +41,4 @@ Request Body:
 Response:
 * `200` Specified plamp's `batteryLevel` and `batteryHistory` updated on Firebase RTDB
 * `400` Request is either missing `batteryLevel` or `batteryLevel` is an invalid value
-* `500` Firebase RTDB error
+* `500` Generic Firebase RTDB error
