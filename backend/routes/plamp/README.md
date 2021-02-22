@@ -19,9 +19,9 @@ Response Body:
           "plamp": {
               "user": string,
               "name": string,
-              "batteryLevel": 100,
+              "batteryLevel": int (1-100),
               "batteryHistory": {
-                  "1613985047569": 100
+                  [timestamp]: int (1-100)
               }
           }
       }
