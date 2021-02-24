@@ -22,11 +22,22 @@ export function addPlamp(user, name, res) {
 }
 
 export function addBatteryLevel(id, batteryLevel, res) {
-  const ref = db.ref(`plamp/${id}/batteryHistory/${Date.now()}`);
-  ref
+  const ref = db.ref(`plamp/${id}`);
+  const batteryHistoryRef = ref.child(`/batteryHistory/${Date.now()}`);
+  const currentBatteryRef = ref.child(`/batteryLevel`);
+
+  batteryHistoryRef
     .set(batteryLevel)
     .then(() => {
-      res.status(200).send({ msg: "Success!" });
+      currentBatteryRef
+        .set(batteryLevel)
+        .then(() => {
+          res.status(200).send({ msg: "Success!" });
+        })
+        .catch((err) => {
+          res.status(500).send({ err: "Server Error" });
+          console.error(err);
+        });
     })
     .catch((err) => {
       res.status(500).send({ err: "Server Error" });
@@ -43,5 +54,9 @@ export function getPlamp(id, res) {
       } else {
         res.status(404).send({ err: "Not Found" });
       }
+    })
+    .catch((err) => {
+      res.status(500).send({ err: "Server Error" });
+      console.error(err);
     });
 }
