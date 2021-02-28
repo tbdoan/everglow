@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 
 function History(props) {
 
-    const [show, setShow] = useState(false)
+    //const [show, setShow] = useState(false)
 
     return(
-        <Menu styles={styles} isOpen={true}>
-            <p>hi</p>
+        <Menu styles={styles} isOpen={false}>
+            <p>history</p>
         </Menu>
     );
 }
