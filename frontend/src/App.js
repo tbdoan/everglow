@@ -1,10 +1,14 @@
-import "./App.css";
-import LoginUI from "./LoginUI";
+import './App.css';
+import Main from './View/Screens/Main.js'
+import SettingsButton from './View/Components/SettingsButton'
+import HistoryButton from './View/Components/HistoryButton'
 
 function App() {
   return (
-    <div className="App">
-      <LoginUI />
+    <div>
+      <div><SettingsButton /></div>
+      <div><Main /></div>
+      <div><HistoryButton /></div>
     </div>
   );
 }
