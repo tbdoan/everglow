@@ -45,6 +45,18 @@ export function addBatteryLevel(id, batteryLevel, res) {
     });
 }
 
+export function changeName(id, name, res) {
+  const ref = db.ref(`plamp/${id}`);
+  ref
+    .child("/name")
+    .set(name)
+    .then(res.status(200).send({ msg: "Success!" }))
+    .catch((err) => {
+      res.status(500).send({ err: "Server Error" });
+      console.error(err);
+    });
+}
+
 export function getPlamp(id, res) {
   db.ref(`plamp/${id}`)
     .get()

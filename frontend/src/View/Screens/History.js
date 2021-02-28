@@ -1,14 +1,23 @@
 // Imports
 import { push as Menu } from 'react-burger-menu'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function History(props) {
 
-    const [show, setShow] = useState(false)
+    const [battery, setBattery] = useState([])
+
+    /*
+    useEffect( () => {
+        // send http request
+        fetch()
+        // use it to populate battery state
+        .then()
+    }) */
 
     return(
-        <Menu styles={styles} isOpen={true}>
-            <p>hi</p>
+        <Menu width={800} styles={styles} isOpen={false}>
+            <p>history</p>
+            {/* Render Battery components (maybe make a battery table component in Components folder*/}
         </Menu>
     );
 }
