@@ -1,5 +1,5 @@
 // Imports
-
+import { push as Menu } from 'react-burger-menu'
 
 function Settings() {
     return(

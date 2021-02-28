@@ -1,6 +1,6 @@
 //imports
 
-function HistoryController() {
+function HistoryController(props) {
     alert("TODO")
     console.log("HI")
 }
