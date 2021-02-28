@@ -28,6 +28,16 @@
   color: #61dafb;
 }
 
+.historybuttonbox{
+  text-align: right !important;
+  border-width : 100px;
+  border-color: red;
+}
+
+.historybutton{
+  text-align: right;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
