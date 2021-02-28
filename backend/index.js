@@ -1,11 +1,12 @@
 import express from "express";
-import plamp_router from "./routes/plamp/routes.js";
-import user_router from "./routes/user/routes.js";
+import plampRouter from "./routes/plamp/routes.js";
+import userRouter from "./routes/user/routes.js";
 
 const port = 8080;
 const app = express();
-app.use("/plamp", plamp_router);
-app.use("/user", user_router);
+
+app.use("/plamp", plampRouter);
+app.use("/user", userRouter);
 
 app.get("/", (req, res) => {
   res.send({ msg: "Hello World!" });

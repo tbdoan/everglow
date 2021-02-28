@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import './App.css';
 import Main from './View/Screens/Main.js'
 import SettingsButton from './View/Components/SettingsButton'
