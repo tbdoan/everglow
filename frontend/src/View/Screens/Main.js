@@ -1,5 +1,4 @@
 // Imports
-
 import temp_plant from '../Images/temp_plant.jpg'
 
 function Main() {
