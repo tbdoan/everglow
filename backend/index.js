@@ -2,7 +2,7 @@ import express from "express";
 import plampRouter from "./routes/plamp/routes.js";
 import userRouter from "./routes/user/routes.js";
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 const app = express();
 
 app.use("/plamp", plampRouter);
