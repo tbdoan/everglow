@@ -26,12 +26,15 @@ function Settings(props) {
           const data = JSON.stringify({ name: currentName });
           fetch("https://plamp-123.herokuapp.com/plamp/name", {
             method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
             body: data,
-          }).then(alert("ok"));
+          });
+          alert(`Plamp name changed to ${currentName}`);
         }}
       >
         <label>
-          Name:
           <input
             type="text"
             value={currentName}
@@ -40,6 +43,8 @@ function Settings(props) {
               setCurrentName(e.target.value);
               console.log(currentName);
             }}
+            style={{ width: "50%" }}
+            placeholder={"Name"}
           />
         </label>
         <input type="submit" value="Enter" />
