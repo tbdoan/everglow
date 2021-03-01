@@ -4,22 +4,23 @@
   text-align: center;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-/*
-
 .App {
     text-align: center;
-    background-color: blue;
     height: 100%;
 }
   
-*/
+
 
 .mainTable{
     width : 100%;
-    height: 600px;
+    height: 1300px;
 }
+
+.leftBox{
+    background-color:"red"
+}
+
+.leftBox{
+    background-color:"red"
+}
+
