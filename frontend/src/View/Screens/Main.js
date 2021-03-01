@@ -4,6 +4,7 @@ import PlantDisplay from '../Components/PlantDisplay'
 import background from '../../View/Images/mainbackground.jpg'
 import './Main.css';
 import BatteryDisplay from '../Components/BatteryDisplay.js';
+import OnOffDisplay from '../Components/OnOffDisplay.js';
 
 function Main() {
   
@@ -15,7 +16,7 @@ function Main() {
           <body>
             <table class = "mainTable">
               <tr class = "mainRow">
-                 <td className= "leftbox"> on off switch </td> 
+                 <td className= "leftbox"> <OnOffDisplay/> </td> 
                  <td className="plantBox"> <PlantDisplay /> </td> 
                  <td className = "rightBox"><BatteryDisplay/></td> 
               </tr>
