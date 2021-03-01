@@ -1,7 +1,7 @@
 // Imports
 import temp_plant from '../Images/temp_plant.jpg'
 import './Main.css';
-
+import BatteryDisplay from '../Components/BatteryDisplay.js';
 
 function Main() {
     return (
@@ -14,7 +14,7 @@ function Main() {
               <tr class = "mainRow">
                  <td>on off</td> 
                  <td>the plant emoji thing</td> 
-                 <td>battery icon thing</td> 
+                 <td><BatteryDisplay/></td> 
               </tr>
             </table>
           </body>
