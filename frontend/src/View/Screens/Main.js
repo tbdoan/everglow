@@ -9,7 +9,7 @@ function Main() {
     return (
         <div className="App">
           <header className="App-header">
-            <h1> Plamp Dashboard </h1>
+            <h1 id="title"> Plamp Dashboard </h1>
           </header>
           <body>
             <table class = "mainTable">
@@ -24,4 +24,4 @@ function Main() {
       );
 }
 
-export default Main
+export default Main;
