@@ -17,7 +17,9 @@ function History(props) {
 
   return (
     <Menu
-      customBurgerIcon={<FontAwesomeIcon icon={faHistory} color="white" />}
+      customBurgerIcon={
+        <FontAwesomeIcon icon={faHistory} color="white" className="fa-icon" />
+      }
       width={800}
       styles={styles}
       isOpen={false}
@@ -30,7 +32,7 @@ function History(props) {
 
 var styles = {
   bmBurgerButton: {
-    position: "fixed",
+    position: "absolute",
     width: "36px",
     height: "30px",
     left: "36px",
