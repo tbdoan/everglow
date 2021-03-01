@@ -3,9 +3,13 @@ import { push as Menu } from "react-burger-menu";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
+import "./Settings.css";
+import ToggleButton from "../Components/ToggleButton";
 
 function Settings(props) {
   //const [show, setShow] = useState(false)
+  const [currentName, setCurrentName] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
     <Menu
@@ -14,7 +18,36 @@ function Settings(props) {
       styles={styles}
       isOpen={false}
     >
-      <p>settings</p>
+      <p>Settings</p>
+      <br />
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          const data = JSON.stringify({ name: currentName });
+          fetch("https://plamp-123.herokuapp.com/plamp/name", {
+            method: "PUT",
+            body: data,
+          }).then(alert("ok"));
+        }}
+      >
+        <label>
+          Name:
+          <input
+            type="text"
+            value={currentName}
+            onChange={(e) => {
+              e.preventDefault();
+              setCurrentName(e.target.value);
+              console.log(currentName);
+            }}
+          />
+        </label>
+        <input type="submit" value="Enter" />
+      </form>
+      <br />
+      <p>Dark mode</p>
+      <ToggleButton />
+      <br />
     </Menu>
   );
 }

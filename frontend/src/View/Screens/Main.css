@@ -11,8 +11,7 @@
   pointer-events: none;
 }
 
-button:focus,
-p:focus {
+*:focus {
   outline: none;
 }
 
