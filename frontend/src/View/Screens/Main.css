@@ -1,25 +1,40 @@
 .App-header {
-  background-color: #282c34;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.15);
   min-height: 10vh;
   text-align: center;
+  justify-content: center;
 }
 
 .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
-/*
+button:focus,
+p:focus {
+  outline: none;
+}
 
 .App {
-    text-align: center;
-    background-color: blue;
-    height: 100%;
+  text-align: center;
+  height: 100%;
 }
-  
-*/
 
-.mainTable{
-    width : 100%;
-    height: 600px;
+.mainTable {
+  width: 100%;
+  height: 720px;
+}
+
+#title {
+  margin: auto;
+  color: white;
+}
+
+.leftBox {
+  background-color: "red";
+}
+
+.leftBox {
+  background-color: "red";
 }
