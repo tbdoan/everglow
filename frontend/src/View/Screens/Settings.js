@@ -21,7 +21,7 @@ function Settings(props) {
 
 var styles = {
   bmBurgerButton: {
-    position: "fixed",
+    position: "absolute",
     width: "36px",
     height: "30px",
     right: "36px",
