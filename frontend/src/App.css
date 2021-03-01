@@ -20,3 +20,9 @@
     transform: rotate(360deg);
   }
 }
+
+.wholeAssApp{
+  background-image: url(./View/Images/mainbackground.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
