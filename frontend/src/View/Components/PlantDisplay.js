@@ -2,6 +2,8 @@
 //import plantgif from '../Images/live_plant.gif'
 import plantpng from '../Images/live_plant2.png'
 import plant40 from '../Images/live_plant40battery.png'
+import plant0 from '../Images/live_plant0battery.png'
+
 import "./styles.css";
 import React, { useState, useEffect } from 'react';
 
@@ -22,9 +24,14 @@ function PlantDisplay() {
         return(
             <img className="photo" src={plantpng}/>
         )
-    } else {
+    } else if(batLevel <= 70 && batLevel > 30 ){
         return(
             <img className="photo" src={plant40}/>
+        )
+    }
+    else {
+        return(
+            <img className="photo" src={plant0}/>
         )
     }
 
