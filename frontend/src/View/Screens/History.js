@@ -34,11 +34,12 @@ function History() {
                                 let d = Date.parse(Date(t))
                                 console.log(typeof d)
                                 let d1 = new Date(d)
-                                return d1.toLocaleString("en-US")}),
+                                return d1.toLocaleString("en-US")
+                              }),
         datasets: [
           {
             label: 'Battery Level',
-            fill: false,
+            fill: true,
             lineTension: 0.1,
             backgroundColor: 'rgba(75,192,192,0.4)',
             borderColor: 'rgba(75,192,192,1)',
@@ -66,7 +67,7 @@ function History() {
 
     return(
         <Menu width={800} styles={styles} isOpen={false}>
-            <p>history</p>
+            <p>Battery History</p>
             <Line data={chartData}/>
             {/* Render Battery components (maybe make a battery table component in Components folder*/}
         </Menu>
