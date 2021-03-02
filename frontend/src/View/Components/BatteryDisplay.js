@@ -28,30 +28,48 @@ function BatteryDisplay() {
 
     if (batLevel > 90){
         return(  
-            <img alt="Battery" src={HundredBattery}/>
+            <div>
+                <img alt="Battery" src={HundredBattery}/>
+                <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {batLevel}% </header>
+            </div>
         )
     } else if(batLevel > 70){
         return(  
-            <img alt="Battery" src={EightyBattery}/>
+            <div>
+                <img alt="Battery" src={EightyBattery}/>
+                <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {batLevel}% </header>
+            </div>
+            
         )
     } else if(batLevel > 50){
         return(  
-            <img alt="Battery" src={SixtyBattery}/>
+            <div>
+                <img alt="Battery" src={SixtyBattery}/>
+                <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {batLevel}% </header>
+            </div>
         )
     } else if(batLevel > 30){
-        return(  
-            <img alt="Battery" src={FourtyBattery}/>
+        return(
+            <div>
+                <img alt="Battery" src={FourtyBattery}/>
+                <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {batLevel}% </header>
+            </div>
         )
     } else if(batLevel > 10){
         return(  
-            <img alt="Battery" src={TwentyBattery}/>
+            <div>
+                <img alt="Battery" src={TwentyBattery}/>
+                <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {batLevel}% </header>
+            </div>
         )
     } else{
-        return(  
-            <img alt="Battery" src={ZeroBattery}/>
+        return( 
+            <div> 
+                <img alt="Battery" src={ZeroBattery}/>
+                <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {batLevel}% </header>
+            </div>
         )
     }
-    
 }
 
 export default BatteryDisplay
