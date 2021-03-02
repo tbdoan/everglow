@@ -31,6 +31,7 @@ function Settings({ switchFunction }) {
             body: data,
           });
           alert(`Plamp name changed to ${currentName}`);
+          window.location.reload();
         }}
       >
         <label>
