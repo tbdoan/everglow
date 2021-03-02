@@ -55,7 +55,7 @@ function BatteryDisplay() {
                 <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {batLevel}% </header>
             </div>
         )
-    } else if(batLevel > 10){
+    } else if(batLevel > 5){
         return(  
             <div>
                 <img alt="Battery" src={TwentyBattery}/>
