@@ -2,6 +2,8 @@
 import { push as Menu } from "react-burger-menu";
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 function History() {
   const [battery, setBattery] = useState([]);
@@ -61,7 +63,12 @@ function History() {
   // new Date(129031293102)
 
   return (
-    <Menu width={800} styles={styles} isOpen={false}>
+    <Menu
+      customBurgerIcon={<FontAwesomeIcon icon={faClock} color="white" />}
+      width={800}
+      styles={styles}
+      isOpen={false}
+    >
       <p>Battery History</p>
       <Line data={chartData} />
       {/* Render Battery components (maybe make a battery table component in Components folder*/}
