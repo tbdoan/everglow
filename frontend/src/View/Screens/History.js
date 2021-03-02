@@ -1,22 +1,100 @@
 // Imports
 import { push as Menu } from 'react-burger-menu'
 import React, { useState, useEffect } from 'react';
+import { Line } from 'react-chartjs-2'
 
-function History(props) {
+function History() {
 
     const [battery, setBattery] = useState([])
+    const [times, setTimes] = useState([])
+    const [chartData, setChartData] = useState({})
 
-    /*
     useEffect( () => {
         // send http request
-        fetch()
+        fetch("https://plamp-123.herokuapp.com/plamp")
         // use it to populate battery state
-        .then()
-    }) */
+        .then(response => response.json())
+        .then(data => {
+            let tmpT = Object.keys(data.batteryHistory)
+            let tmpB = Object.values(data.batteryHistory)
+            //console.log(tmpT)
+            setTimes(tmpT)
+            setBattery(tmpB)
+            // console.log(battery)
+            // console.log(battery)
+            // console.log(chartData)
+        })
+    },[])
+
+    useEffect( () => {
+      console.log(times)
+      setChartData({
+        labels: times.map(t => {
+                                console.log(t)
+                                let d = Date.parse(Date(t))
+                                console.log(typeof d)
+                                let d1 = new Date(d)
+                                return d1.toLocaleString("en-US")}),
+        datasets: [
+          {
+            label: 'Battery Level',
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: 'rgba(75,192,192,0.4)',
+            borderColor: 'rgba(75,192,192,1)',
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: 'rgba(75,192,192,1)',
+            pointBackgroundColor: '#fff',
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+            pointHoverBorderColor: 'rgba(220,220,220,1)',
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: battery
+          }
+        ]
+      })
+    }, [battery, times])
+
+
+   // new Date(129031293102)
+
+  //  const data = {
+  //   labels: times.map(t => Date(t)),
+  //   datasets: [
+  //     {
+  //       label: 'My First dataset',
+  //       fill: false,
+  //       lineTension: 0.1,
+  //       backgroundColor: 'rgba(75,192,192,0.4)',
+  //       borderColor: 'rgba(75,192,192,1)',
+  //       borderCapStyle: 'butt',
+  //       borderDash: [],
+  //       borderDashOffset: 0.0,
+  //       borderJoinStyle: 'miter',
+  //       pointBorderColor: 'rgba(75,192,192,1)',
+  //       pointBackgroundColor: '#fff',
+  //       pointBorderWidth: 1,
+  //       pointHoverRadius: 5,
+  //       pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+  //       pointHoverBorderColor: 'rgba(220,220,220,1)',
+  //       pointHoverBorderWidth: 2,
+  //       pointRadius: 1,
+  //       pointHitRadius: 10,
+  //       data: {battery}
+  //     }
+  //   ]
+  // };
 
     return(
         <Menu width={800} styles={styles} isOpen={false}>
             <p>history</p>
+            <Line data={chartData}/>
             {/* Render Battery components (maybe make a battery table component in Components folder*/}
         </Menu>
     );
