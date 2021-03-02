@@ -21,7 +21,7 @@ function Settings({ switchFunction }) {
       <br />
       <form
         onSubmit={(e) => {
-          e.preventDefault();
+          // e.preventDefault();
           const data = JSON.stringify({ name: currentName });
           fetch("https://plamp-123.herokuapp.com/plamp/name", {
             method: "PUT",
