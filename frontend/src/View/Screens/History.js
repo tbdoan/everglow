@@ -64,33 +64,6 @@ function History() {
 
    // new Date(129031293102)
 
-  //  const data = {
-  //   labels: times.map(t => Date(t)),
-  //   datasets: [
-  //     {
-  //       label: 'My First dataset',
-  //       fill: false,
-  //       lineTension: 0.1,
-  //       backgroundColor: 'rgba(75,192,192,0.4)',
-  //       borderColor: 'rgba(75,192,192,1)',
-  //       borderCapStyle: 'butt',
-  //       borderDash: [],
-  //       borderDashOffset: 0.0,
-  //       borderJoinStyle: 'miter',
-  //       pointBorderColor: 'rgba(75,192,192,1)',
-  //       pointBackgroundColor: '#fff',
-  //       pointBorderWidth: 1,
-  //       pointHoverRadius: 5,
-  //       pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-  //       pointHoverBorderColor: 'rgba(220,220,220,1)',
-  //       pointHoverBorderWidth: 2,
-  //       pointRadius: 1,
-  //       pointHitRadius: 10,
-  //       data: {battery}
-  //     }
-  //   ]
-  // };
-
     return(
         <Menu width={800} styles={styles} isOpen={false}>
             <p>history</p>
@@ -101,48 +74,48 @@ function History() {
 }
 
 var styles = {
-    bmBurgerButton: {
-      position: 'fixed',
-      width: '36px',
-      height: '30px',
-      left: '36px',
-      top: '36px'
-    },
-    bmBurgerBars: {
-      background: '#373a47'
-    },
-    bmBurgerBarsHover: {
-      background: '#a90000'
-    },
-    bmCrossButton: {
-      height: '24px',
-      width: '24px'
-    },
-    bmCross: {
-      background: '#bdc3c7'
-    },
-    bmMenuWrap: {
-      position: 'fixed',
-      height: '100%'
-    },
-    bmMenu: {
-      background: '#373a47',
-      padding: '2.5em 1.5em 0',
-      fontSize: '1.15em'
-    },
-    bmMorphShape: {
-      fill: '#373a47'
-    },
-    bmItemList: {
-      color: '#b8b7ad',
-      padding: '0.8em'
-    },
-    bmItem: {
-      display: 'inline-block'
-    },
-    bmOverlay: {
-      background: 'rgba(0, 0, 0, 0.3)'
-    }
-  }
+  bmBurgerButton: {
+    position: "absolute",
+    width: "36px",
+    height: "30px",
+    left: "36px",
+    top: "3vh",
+  },
+  bmBurgerBars: {
+    background: "white",
+  },
+  bmBurgerBarsHover: {
+    background: "#a90000",
+  },
+  bmCrossButton: {
+    height: "24px",
+    width: "24px",
+  },
+  bmCross: {
+    background: "#bdc3c7",
+  },
+  bmMenuWrap: {
+    position: "fixed",
+    height: "100%",
+  },
+  bmMenu: {
+    background: "#373a47",
+    padding: "2.5em 1.5em 0",
+    fontSize: "1.15em",
+  },
+  bmMorphShape: {
+    fill: "#373a47",
+  },
+  bmItemList: {
+    color: "#b8b7ad",
+    padding: "0.8em",
+  },
+  bmItem: {
+    display: "inline-block",
+  },
+  bmOverlay: {
+    background: "rgba(0, 0, 0, 0.3)",
+  },
+};
 
-export default History
+export default History;
