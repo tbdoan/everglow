@@ -6,9 +6,9 @@ import { faCog } from "@fortawesome/free-solid-svg-icons";
 import "./Settings.css";
 import ToggleButton from "../Components/ToggleButton";
 
-function Settings({ switchFunction }) {
+function Settings({ switchFunction, darkMode }) {
   //const [show, setShow] = useState(false)
-  const [currentName, setCurrentName] = useState("");
+  const [currentName, setCurrentName] = useState();
 
   return (
     <Menu
@@ -50,7 +50,7 @@ function Settings({ switchFunction }) {
       </form>
       <br />
       <p>Dark mode</p>
-      <ToggleButton onClick={switchFunction} />
+      <ToggleButton onClick={switchFunction} checked={darkMode || false} />
       <br />
     </Menu>
   );
