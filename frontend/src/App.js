@@ -10,7 +10,7 @@ function App() {
   function switchFunction() {
     // frontend change
     setDarkMode(!darkMode);
-    fetch("https://plamp-123.herokuapp.com/changeDarkMode", {
+    fetch("https://plamp-123.herokuapp.com/plamp/changeDarkMode", {
       method: "PUT",
     });
   }
