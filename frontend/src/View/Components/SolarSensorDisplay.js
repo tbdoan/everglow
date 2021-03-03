@@ -10,14 +10,8 @@ import solarOff from '../Images/solarOff.png';
 
 function SolarSensorDisplay(props) {
 
-    const [isOn, setIsOn] = useState(false)
 
-    useEffect( () => {
-        setIsOn(props.volt >= 1)
-    },[])
-
-
-    if (isOn){
+    if (props.volt >= 1){
         return( 
             <div>
                 <img alt="On" src={solarOn}/>
