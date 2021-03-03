@@ -38,6 +38,13 @@ function Main() {
     .then((response) => response.json())
     .then((data) => setVolt(data.solarPower))
   }, 10000);
+
+  useEffect(() => {
+    fetch("https://plamp-123.herokuapp.com/plamp")
+    // use it to populate battery state
+    .then((response) => response.json())
+    .then((data) => setVolt(data.solarPower))
+  }, [])
   
     return (
         <div className="App">
@@ -51,7 +58,7 @@ function Main() {
                  <td className= "leftbox"> {volt}
                  </td> 
                  <td className="plantBox"> <PlantDisplay /> </td> 
-                 <td className = "rightBox"><BatteryDisplay/></td> 
+                 <td className = "rightBox"><BatteryDisplay volt={volt}/></td> 
               </tr>
             </table>
           </body>
