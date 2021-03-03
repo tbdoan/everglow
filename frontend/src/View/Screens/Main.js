@@ -6,8 +6,38 @@ import './Main.css';
 import BatteryDisplay from '../Components/BatteryDisplay.js';
 import OnOffDisplay from '../Components/OnOffDisplay.js';
 import NameDisplay from '../Components/NameDisplay.js';
+import React, { useState, useEffect, useRef } from "react";
+
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  // Remember the latest callback.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}
+
 
 function Main() {
+  const [volt, setVolt] = useState(0)
+  useInterval(() => {
+    // Your custom logic here
+    fetch("https://plamp-123.herokuapp.com/plamp")
+    // use it to populate battery state
+    .then((response) => response.json())
+    .then((data) => setVolt(data.solarPower))
+  }, 10000);
   
     return (
         <div className="App">
@@ -18,7 +48,8 @@ function Main() {
             <p className="name"> <NameDisplay /> </p>
             <table class = "mainTable">
               <tr class = "mainRow">
-                 <td className= "leftbox"> <OnOffDisplay/> </td> 
+                 <td className= "leftbox"> {volt}
+                 </td> 
                  <td className="plantBox"> <PlantDisplay /> </td> 
                  <td className = "rightBox"><BatteryDisplay/></td> 
               </tr>

@@ -18,12 +18,8 @@ function History() {
       .then((data) => {
         let tmpT = Object.keys(data.batteryHistory);
         let tmpB = Object.values(data.batteryHistory);
-        //console.log(tmpT)
         setTimes(tmpT);
         setBattery(tmpB);
-        // console.log(battery)
-        // console.log(battery)
-        // console.log(chartData)
       });
   }, []);
 
