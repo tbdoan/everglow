@@ -28,7 +28,7 @@ function useInterval(callback, delay) {
   }, [delay]);
 }
 
-function Main() {
+function Main(props) {
   const [volt, setVolt] = useState(0);
   const [batLevel, setBatLevel] = useState(0)
   useInterval(() => {
@@ -51,7 +51,7 @@ function Main() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className={props.darkMode ? "App-header-dark" : "App-header-light"}>
         <h1 id="title" className="nav-text">
           Everglow Dashboard
         </h1>
