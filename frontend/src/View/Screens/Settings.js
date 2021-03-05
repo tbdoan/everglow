@@ -6,27 +6,24 @@ import { faCog } from "@fortawesome/free-solid-svg-icons";
 import "./Settings.css";
 import "./Main.css";
 import ToggleButton from "../Components/ToggleButton";
-import {Button, TextField, FormControl} from '@material-ui/core';
-import {
-  fade,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { Button, TextField, FormControl } from "@material-ui/core";
+import { fade, makeStyles } from "@material-ui/core/styles";
 
 const useStylesReddit = makeStyles((theme) => ({
   root: {
     height: 50,
-    width: 'auto',
-    border: '1px solid #e2e2e1',
+    width: "auto",
+    border: "1px solid #e2e2e1",
     fontSize: 15,
-    overflow: 'hidden',
+    overflow: "hidden",
     borderRadius: 1,
-    backgroundColor: '#fcfcfb',
-    transition: theme.transitions.create(['border-color', 'box-shadow']),
-    '&:hover': {
-      backgroundColor: '#fff',
+    backgroundColor: "#fcfcfb",
+    transition: theme.transitions.create(["border-color", "box-shadow"]),
+    "&:hover": {
+      backgroundColor: "#fff",
     },
-    '&$focused': {
-      backgroundColor: '#fff',
+    "&$focused": {
+      backgroundColor: "#fff",
       boxShadow: `${fade(theme.palette.primary.main, 0.25)} 0 0 0 1px`,
       borderColor: theme.palette.primary.main,
     },
@@ -36,9 +33,10 @@ const useStylesReddit = makeStyles((theme) => ({
 
 function RedditTextField(props) {
   const classes = useStylesReddit();
-  return <TextField InputProps={{ classes, disableUnderline: true }} {...props} />;
+  return (
+    <TextField InputProps={{ classes, disableUnderline: true }} {...props} />
+  );
 }
-
 
 function Settings({ switchFunction, darkMode }) {
   //const [show, setShow] = useState(false)
@@ -46,9 +44,7 @@ function Settings({ switchFunction, darkMode }) {
 
   return (
     <Menu
-      customBurgerIcon={
-        <FontAwesomeIcon icon={faCog} color="white" fontSize="5em" />
-      }
+      customBurgerIcon={<FontAwesomeIcon icon={faCog} color="white" />}
       right
       styles={styles}
       isOpen={false}
@@ -56,87 +52,44 @@ function Settings({ switchFunction, darkMode }) {
     >
       <p>Settings</p>
       <br />
-      
-      {/* <form
-        onSubmit={(e) => {
+
+      <p>Change Name</p>
+      <br />
+      <RedditTextField
+        label="Name"
+        // className={classes.margin}
+        defaultValue=""
+        variant="filled"
+        id="reddit-input"
+        onChange={(e) => {
+          e.preventDefault();
+          setCurrentName(e.target.value);
+          console.log(currentName);
+        }}
+      />
+      <Button
+        variant="contained"
+        style={{ height: 50 }}
+        onClick={(e) => {
           // e.preventDefault();
-          const data = JSON.stringify({ name: currentName });
-          fetch("https://plamp-123.herokuapp.com/plamp/name", {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: data,
-          });
-          alert(`Everglow name changed to ${currentName}`);
+          if (currentName === undefined || currentName === "") {
+            alert("Error: Invalid Name");
+          } else {
+            const data = JSON.stringify({ name: currentName });
+            fetch("https://plamp-123.herokuapp.com/plamp/name", {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: data,
+            });
+            alert(`Everglow name changed to ${currentName}`);
+            window.location.reload();
+          }
         }}
       >
-        <label>
-          <input
-            type="text"
-            value={currentName}
-            onChange={(e) => {
-              e.preventDefault();
-              setCurrentName(e.target.value);
-              console.log(currentName);
-            }}
-            style={{ width: "50%" }}
-            placeholder={"Name"}
-          />
-        </label>
-
-        <input type="submit" value="Enter" />
-      </form> */}
-
-        {/* <form
-        onSubmit={(e) => {
-          // e.preventDefault();
-          const data = JSON.stringify({ name: currentName });
-          fetch("https://plamp-123.herokuapp.com/plamp/name", {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: data,
-          });
-          alert(`Everglow name changed to ${currentName}`);
-        }}> */}
-
-
-        {/* <TextField id="filled-basic" label="Name" variant="outlined" size="small" style={{color:"red"}}
-                   onChange={(e) => {
-                      e.preventDefault();
-                      setCurrentName(e.target.value);
-                      console.log(currentName);
-                   }} /> */}
-        <p>Change Name</p>
-        <br/>
-        <RedditTextField
-          label="Name"
-          // className={classes.margin}
-          defaultValue=""
-          variant="filled"
-          id="reddit-input"
-          onChange={(e) => {
-            e.preventDefault();
-            setCurrentName(e.target.value);
-            console.log(currentName);
-         }}
-        />
-        <Button variant="contained" style={{height:50}}
-                                  onClick={(e) => {
-                                    // e.preventDefault();
-                                    const data = JSON.stringify({ name: currentName });
-                                    fetch("https://plamp-123.herokuapp.com/plamp/name", {
-                                      method: "PUT",
-                                      headers: {
-                                        "Content-Type": "application/json",
-                                      },
-                                      body: data,
-                                    });
-                                    alert(`Everglow name changed to ${currentName}`);
-                                  }}>
-        Enter</Button>
+        Enter
+      </Button>
 
       <br />
       <p>Dark mode</p>
