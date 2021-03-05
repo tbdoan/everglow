@@ -60,9 +60,7 @@ function History() {
 
   return (
     <Menu
-      customBurgerIcon={
-        <FontAwesomeIcon icon={faClock} color="white" className="nav-text" />
-      }
+      customBurgerIcon={<FontAwesomeIcon icon={faClock} color="white" />}
       width={"90%"}
       styles={styles}
       isOpen={false}
@@ -77,9 +75,9 @@ function History() {
 var styles = {
   bmBurgerButton: {
     position: "absolute",
-    width: "36px",
-    height: "30px",
-    left: "36px",
+    width: "5vw",
+    height: "5vh",
+    left: "5%",
     top: "3vh",
   },
   bmBurgerBars: {
