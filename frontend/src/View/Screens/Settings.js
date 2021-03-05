@@ -52,7 +52,7 @@ function Settings({ switchFunction, darkMode }) {
       right
       styles={styles}
       isOpen={false}
-      width={"28%"}
+      width={"360px"}
     >
       <p>Settings</p>
       <br />
