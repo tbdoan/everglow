@@ -7,8 +7,10 @@ import deadplant from '../Images/dead_plant.png';
 import "./styles.css";
 import React, { useState, useEffect } from "react";
 
-function PlantDisplay() {
-  const [batLevel, setBatLevel] = useState(0);
+function PlantDisplay(props) {
+  
+  /*
+    const [batLevel, setBatLevel] = useState(0);
 
   useEffect(() => {
     fetch("https://plamp-123.herokuapp.com/plamp")
@@ -19,12 +21,12 @@ function PlantDisplay() {
         setBatLevel(data.batteryLevel);
       });
   }, []);
-
-  if (batLevel > 70) {
+*/
+  if (props.batLevel > 70) {
     return <img className="photo" src={plantpng} />;
-  } else if (batLevel <= 70 && batLevel > 30) {
+  } else if (props.batLevel <= 70 && props.batLevel > 30) {
     return <img className="photo" src={plant40} />;
-  } else if (batLevel <= 30 && batLevel > 5) {
+  } else if (props.batLevel <= 30 && props.batLevel > 5) {
     return <img className="photo" src={plant0} />;
   }
   else {

@@ -30,19 +30,23 @@ function useInterval(callback, delay) {
 
 function Main() {
   const [volt, setVolt] = useState(0);
+  const [batLevel, setBatLevel] = useState(0)
   useInterval(() => {
     // Your custom logic here
     fetch("https://plamp-123.herokuapp.com/plamp")
       // use it to populate battery state
       .then((response) => response.json())
-      .then((data) => setVolt(data.solarPower));
+      .then((data) => {setVolt(data.solarPower);
+        setBatLevel(data.batteryLevel);})
   }, 5000);
 
   useEffect(() => {
     fetch("https://plamp-123.herokuapp.com/plamp")
       // use it to populate battery state
       .then((response) => response.json())
-      .then((data) => setVolt(data.solarPower));
+      .then((data) => {setVolt(data.solarPower);
+        setBatLevel(data.batteryLevel);})
+
   }, []);
 
   return (
@@ -61,10 +65,10 @@ function Main() {
             <SolarSensorDisplay volt={volt} />
           </div>
           <div className="card">
-            <PlantDisplay />
+            <PlantDisplay batLevel={batLevel}/>
           </div>
           <div className="card">
-            <BatteryDisplay volt={volt} />
+            <BatteryDisplay volt={volt} batLevel={batLevel} />
           </div>
         </div>
       </body>
