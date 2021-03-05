@@ -22,28 +22,14 @@
 #wholeAssApp {
   min-height: 100vh;
   height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  /*font-family: "Open Sans";*/
 }
 
 .light {
   background-color: #9ad0e7;
-  opacity: 1
-
-  /* background: linear-gradient(
-      358.94deg,
-      #8fca8d 0.85%,
-      rgba(214, 244, 214, 0) 78.59%
-    ),
-    linear-gradient(180deg, #80d1f3 99.99%, rgba(255, 255, 255, 0) 100%),
-    #ffffff; */
 }
 
 .dark {
-  background-color: #092f3f
-  /* background: linear-gradient(
-      358.94deg,
-      #74a373 0.85%,
-      rgba(24, 68, 23, 0) 64.78%
-    ),
-    linear-gradient(180deg, #092f3f 99.99%, rgba(255, 255, 255, 0) 100%),
-    #092f3f; */
+  background-color: #324e5b;
 }
