@@ -33,7 +33,7 @@ function App() {
         <Settings switchFunction={switchFunction} darkMode={darkMode} />
       </div>
       <div>
-        <Main />
+        <Main darkMode={darkMode}/>
       </div>
     </div>
   );
