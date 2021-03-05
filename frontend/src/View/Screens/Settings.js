@@ -57,75 +57,27 @@ function Settings({ switchFunction, darkMode }) {
       <p>Settings</p>
       <br />
       
-      {/* <form
-        onSubmit={(e) => {
-          // e.preventDefault();
-          const data = JSON.stringify({ name: currentName });
-          fetch("https://plamp-123.herokuapp.com/plamp/name", {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: data,
-          });
-          alert(`Everglow name changed to ${currentName}`);
+      <p>Change Name</p>
+      <br/>
+      <RedditTextField
+        label="Name"
+        // className={classes.margin}
+        defaultValue=""
+        variant="filled"
+        id="reddit-input"
+        onChange={(e) => {
+          e.preventDefault();
+          setCurrentName(e.target.value);
+          console.log(currentName);
         }}
-      >
-        <label>
-          <input
-            type="text"
-            value={currentName}
-            onChange={(e) => {
-              e.preventDefault();
-              setCurrentName(e.target.value);
-              console.log(currentName);
-            }}
-            style={{ width: "50%" }}
-            placeholder={"Name"}
-          />
-        </label>
-
-        <input type="submit" value="Enter" />
-      </form> */}
-
-        {/* <form
-        onSubmit={(e) => {
-          // e.preventDefault();
-          const data = JSON.stringify({ name: currentName });
-          fetch("https://plamp-123.herokuapp.com/plamp/name", {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: data,
-          });
-          alert(`Everglow name changed to ${currentName}`);
-        }}> */}
-
-
-        {/* <TextField id="filled-basic" label="Name" variant="outlined" size="small" style={{color:"red"}}
-                   onChange={(e) => {
-                      e.preventDefault();
-                      setCurrentName(e.target.value);
-                      console.log(currentName);
-                   }} /> */}
-        <p>Change Name</p>
-        <br/>
-        <RedditTextField
-          label="Name"
-          // className={classes.margin}
-          defaultValue=""
-          variant="filled"
-          id="reddit-input"
-          onChange={(e) => {
-            e.preventDefault();
-            setCurrentName(e.target.value);
-            console.log(currentName);
-         }}
-        />
-        <Button variant="contained" style={{height:50}}
-                                  onClick={(e) => {
-                                    // e.preventDefault();
+      />
+      <Button variant="contained" style={{height:50}}
+                                onClick={(e) => {
+                                  // e.preventDefault();
+                                  if(currentName === undefined || currentName === "") {
+                                    alert("Error: Invalid Name")
+                                  }
+                                  else {
                                     const data = JSON.stringify({ name: currentName });
                                     fetch("https://plamp-123.herokuapp.com/plamp/name", {
                                       method: "PUT",
@@ -136,8 +88,9 @@ function Settings({ switchFunction, darkMode }) {
                                     });
                                     alert(`Everglow name changed to ${currentName}`);
                                     window.location.reload();
-                                  }}>
-        Enter</Button>
+                                  }
+                                }}>
+      Enter</Button>
 
       <br />
       <p>Dark mode</p>
