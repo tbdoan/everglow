@@ -1,4 +1,4 @@
-## PLamp
+## Everglow
 
 ## Project Layout
 - **backend**: backend stuff
