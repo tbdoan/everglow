@@ -24,4 +24,5 @@
 #title {
   margin: auto;
   color: white;
+  font-size: min(5vw, 2em);
 }

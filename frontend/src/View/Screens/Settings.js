@@ -102,9 +102,9 @@ function Settings({ switchFunction, darkMode }) {
 var styles = {
   bmBurgerButton: {
     position: "absolute",
-    width: "36px",
-    height: "30px",
-    right: "36px",
+    width: "5vw",
+    height: "5vh",
+    right: "5%",
     top: "3vh",
   },
   bmBurgerBars: {
