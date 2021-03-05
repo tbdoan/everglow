@@ -132,6 +132,7 @@ function Settings({ switchFunction, darkMode }) {
                                       body: data,
                                     });
                                     alert(`Everglow name changed to ${currentName}`);
+                                    window.location.reload();
                                   }}>
         Enter</Button>
 
