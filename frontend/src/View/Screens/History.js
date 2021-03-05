@@ -60,7 +60,9 @@ function History() {
 
   return (
     <Menu
-      customBurgerIcon={<FontAwesomeIcon icon={faClock} color="white" />}
+      customBurgerIcon={
+        <FontAwesomeIcon icon={faClock} color="white" className="nav-text" />
+      }
       width={"80%"}
       styles={styles}
       isOpen={false}

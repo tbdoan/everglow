@@ -1,11 +1,10 @@
 // Imports
-import temp_plant from "../Images/temp_plant.jpg";
 import PlantDisplay from "../Components/PlantDisplay";
-import background from "../../View/Images/mainbackground.jpg";
 import "./Main.css";
+import "./base.css";
+import "./basic-grid.css";
 import BatteryDisplay from "../Components/BatteryDisplay.js";
 import SolarSensorDisplay from "../Components/SolarSensorDisplay.js";
-import OnOffDisplay from "../Components/OnOffDisplay.js";
 import NameDisplay from "../Components/NameDisplay.js";
 import React, { useState, useEffect, useRef } from "react";
 
@@ -49,28 +48,25 @@ function Main() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 id="title"> Everglow Dashboard </h1>
+        <h1 id="title" className="nav-text">
+          Everglow Dashboard
+        </h1>
       </header>
       <body>
         <p className="name">
-          {" "}
-          <NameDisplay />{" "}
+          <NameDisplay />
         </p>
-        <table class="mainTable">
-          <tr class="mainRow">
-            <td className="leftbox">
-              {" "}
-              <SolarSensorDisplay volt={volt} />
-            </td>
-            <td className="plantBox">
-              {" "}
-              <PlantDisplay />{" "}
-            </td>
-            <td className="rightBox">
-              <BatteryDisplay volt={volt} />
-            </td>
-          </tr>
-        </table>
+        <div class="basic-grid">
+          <div className="card">
+            <SolarSensorDisplay volt={volt} />
+          </div>
+          <div className="card">
+            <PlantDisplay />
+          </div>
+          <div className="card">
+            <BatteryDisplay volt={volt} />
+          </div>
+        </div>
       </body>
     </div>
   );

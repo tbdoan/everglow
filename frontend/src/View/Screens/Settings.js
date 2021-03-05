@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
 import "./Settings.css";
+import "./Main.css";
 import ToggleButton from "../Components/ToggleButton";
 
 function Settings({ switchFunction, darkMode }) {
@@ -12,7 +13,9 @@ function Settings({ switchFunction, darkMode }) {
 
   return (
     <Menu
-      customBurgerIcon={<FontAwesomeIcon icon={faCog} color="white" />}
+      customBurgerIcon={
+        <FontAwesomeIcon icon={faCog} color="white" fontSize="5em" />
+      }
       right
       styles={styles}
       isOpen={false}
