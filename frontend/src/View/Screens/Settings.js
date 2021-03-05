@@ -53,57 +53,6 @@ function Settings({ switchFunction, darkMode }) {
       <p>Settings</p>
       <br />
 
-      {/* <form
-        onSubmit={(e) => {
-          // e.preventDefault();
-          const data = JSON.stringify({ name: currentName });
-          fetch("https://plamp-123.herokuapp.com/plamp/name", {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: data,
-          });
-          alert(`Everglow name changed to ${currentName}`);
-        }}
-      >
-        <label>
-          <input
-            type="text"
-            value={currentName}
-            onChange={(e) => {
-              e.preventDefault();
-              setCurrentName(e.target.value);
-              console.log(currentName);
-            }}
-            style={{ width: "50%" }}
-            placeholder={"Name"}
-          />
-        </label>
-
-        <input type="submit" value="Enter" />
-      </form> */}
-
-      {/* <form
-        onSubmit={(e) => {
-          // e.preventDefault();
-          const data = JSON.stringify({ name: currentName });
-          fetch("https://plamp-123.herokuapp.com/plamp/name", {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: data,
-          });
-          alert(`Everglow name changed to ${currentName}`);
-        }}> */}
-
-      {/* <TextField id="filled-basic" label="Name" variant="outlined" size="small" style={{color:"red"}}
-                   onChange={(e) => {
-                      e.preventDefault();
-                      setCurrentName(e.target.value);
-                      console.log(currentName);
-                   }} /> */}
       <p>Change Name</p>
       <br />
       <RedditTextField
@@ -123,16 +72,20 @@ function Settings({ switchFunction, darkMode }) {
         style={{ height: 50 }}
         onClick={(e) => {
           // e.preventDefault();
-          const data = JSON.stringify({ name: currentName });
-          fetch("https://plamp-123.herokuapp.com/plamp/name", {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: data,
-          });
-          alert(`Everglow name changed to ${currentName}`);
-          window.location.reload();
+          if (currentName === undefined || currentName === "") {
+            alert("Error: Invalid Name");
+          } else {
+            const data = JSON.stringify({ name: currentName });
+            fetch("https://plamp-123.herokuapp.com/plamp/name", {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: data,
+            });
+            alert(`Everglow name changed to ${currentName}`);
+            window.location.reload();
+          }
         }}
       >
         Enter
