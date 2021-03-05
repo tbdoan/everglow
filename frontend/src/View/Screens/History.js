@@ -65,7 +65,7 @@ function History() {
       styles={styles}
       isOpen={false}
     >
-      <p>Battery History</p>
+      <p style={{fontSize:25}}>Battery History</p>
       <Line data={chartData} />
       {/* Render Battery components (maybe make a battery table component in Components folder*/}
     </Menu>

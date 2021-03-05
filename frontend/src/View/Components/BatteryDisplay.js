@@ -32,19 +32,21 @@ function BatteryDisplay(props) {
                       })
     },[])
 */
+const style = {color: "#ffffff", 'font-size': '50px', fontWeight:500}
+
     if (props.volt === 0) {
         if (props.batLevel > 90){
             return(  
                 <div>
                     <img alt="Battery" src={HundredBattery}/>
-                    <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {props.batLevel}% </header>
+                    <header style={style}> {props.batLevel}% </header>
                 </div>
             )
         } else if(props.batLevel > 70){
             return(  
                 <div>
                     <img alt="Battery" src={EightyBattery}/>
-                    <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {props.batLevel}% </header>
+                    <header style={style}> {props.batLevel}% </header>
                 </div>
                 
             )
@@ -52,14 +54,14 @@ function BatteryDisplay(props) {
             return(  
                 <div>
                     <img alt="Battery" src={SixtyBattery}/>
-                    <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {props.batLevel}% </header>
+                    <header style={style}> {props.batLevel}% </header>
                 </div>
             )
         } else if(props.batLevel > 30){
             return(
                 <div>
                     <img alt="Battery" src={FourtyBattery}/>
-                    <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {props.batLevel}% </header>
+                    <header style={style}> {props.batLevel}% </header>
                 </div>
             )
         } else if(props.batLevel > 5){
@@ -73,7 +75,7 @@ function BatteryDisplay(props) {
             return( 
                 <div> 
                     <img alt="Battery" src={ZeroBattery}/>
-                    <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {props.batLevel}% </header>
+                    <header style={style}> {props.batLevel}% </header>
                 </div>
             )
         }
@@ -83,14 +85,14 @@ function BatteryDisplay(props) {
             return(  
                 <div>
                     <img alt="Battery" src={HundredCharge}/>
-                    <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {props.batLevel}% </header>
+                    <header style={{color: "#ffffff", 'font-size': '50px', fontWeight:600}}> {props.batLevel}% </header>
                 </div>
             )
         } else if(props.batLevel > 70){
             return(  
                 <div>
                     <img alt="Battery" src={EightyCharge}/>
-                    <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {props.batLevel}% </header>
+                    <header style={style}> {props.batLevel}% </header>
                 </div>
                 
             )
@@ -98,28 +100,28 @@ function BatteryDisplay(props) {
             return(  
                 <div>
                     <img alt="Battery" src={SixtyCharge}/>
-                    <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {props.batLevel}% </header>
+                    <header style={style}> {props.batLevel}% </header>
                 </div>
             )
         } else if(props.batLevel > 30){
             return(
                 <div>
                     <img alt="Battery" src={FourtyCharge}/>
-                    <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {props.batLevel}% </header>
+                    <header style={style}> {props.batLevel}% </header>
                 </div>
             )
         } else if(props.batLevel > 5){
             return(  
                 <div>
                     <img alt="Battery" src={TwentyCharge}/>
-                    <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {props.batLevel}% </header>
+                    <header style={style}> {props.batLevel}% </header>
                 </div>
             )
         } else{
             return( 
                 <div> 
                     <img alt="Battery" src={ZeroCharge}/>
-                    <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {props.batLevel}% </header>
+                    <header style={style}> {props.batLevel}% </header>
                 </div>
             )
         }

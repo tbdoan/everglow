@@ -50,7 +50,7 @@ function Settings({ switchFunction, darkMode }) {
       isOpen={false}
       width={"360px"}
     >
-      <p>Settings</p>
+      <p style={{fontSize:25}}>Settings</p>
       <br />
 
       <p>Change Name</p>
