@@ -36,7 +36,7 @@ function Main() {
       // use it to populate battery state
       .then((response) => response.json())
       .then((data) => setVolt(data.solarPower));
-  }, 10000);
+  }, 5000);
 
   useEffect(() => {
     fetch("https://plamp-123.herokuapp.com/plamp")
