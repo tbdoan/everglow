@@ -36,22 +36,22 @@ const style = {color: "#ffffff", 'font-size': '50px', fontWeight:500}
 
     if (props.volt === 0) {
         if (props.batLevel > 90){
-            return(  
+            return(
                 <div>
                     <img alt="Battery" src={HundredBattery}/>
                     <header style={style}> {props.batLevel}% </header>
                 </div>
             )
         } else if(props.batLevel > 70){
-            return(  
+            return(
                 <div>
                     <img alt="Battery" src={EightyBattery}/>
                     <header style={style}> {props.batLevel}% </header>
                 </div>
-                
+
             )
         } else if(props.batLevel > 50){
-            return(  
+            return(
                 <div>
                     <img alt="Battery" src={SixtyBattery}/>
                     <header style={style}> {props.batLevel}% </header>
@@ -65,39 +65,39 @@ const style = {color: "#ffffff", 'font-size': '50px', fontWeight:500}
                 </div>
             )
         } else if(props.batLevel > 5){
-            return(  
+            return(
                 <div>
                     <img alt="Battery" src={TwentyBattery}/>
                     <header style={{color: "#ffffff", 'font-size': '50px', 'font-weight': 'bold'}}> {props.batLevel}% </header>
                 </div>
             )
         } else{
-            return( 
-                <div> 
+            return(
+                <div>
                     <img alt="Battery" src={ZeroBattery}/>
                     <header style={style}> {props.batLevel}% </header>
                 </div>
             )
         }
     }
-    else { // CHARGING  CHARGING  CHARGING  CHARGING  CHARGING  CHARGING  CHARGING  CHARGING  CHARGING  CHARGING 
+    else { // CHARGING  CHARGING  CHARGING  CHARGING  CHARGING  CHARGING  CHARGING  CHARGING  CHARGING  CHARGING
         if (props.batLevel > 90){
-            return(  
+            return(
                 <div>
                     <img alt="Battery" src={HundredCharge}/>
-                    <header style={{color: "#ffffff", 'font-size': '50px', fontWeight:600}}> {props.batLevel}% </header>
+                    <header style={{color: "#ffffff", 'font-size': '50px', fontWeight:500}}> {props.batLevel}% </header>
                 </div>
             )
         } else if(props.batLevel > 70){
-            return(  
+            return(
                 <div>
                     <img alt="Battery" src={EightyCharge}/>
                     <header style={style}> {props.batLevel}% </header>
                 </div>
-                
+
             )
         } else if(props.batLevel > 50){
-            return(  
+            return(
                 <div>
                     <img alt="Battery" src={SixtyCharge}/>
                     <header style={style}> {props.batLevel}% </header>
@@ -111,15 +111,15 @@ const style = {color: "#ffffff", 'font-size': '50px', fontWeight:500}
                 </div>
             )
         } else if(props.batLevel > 5){
-            return(  
+            return(
                 <div>
                     <img alt="Battery" src={TwentyCharge}/>
                     <header style={style}> {props.batLevel}% </header>
                 </div>
             )
         } else{
-            return( 
-                <div> 
+            return(
+                <div>
                     <img alt="Battery" src={ZeroCharge}/>
                     <header style={style}> {props.batLevel}% </header>
                 </div>

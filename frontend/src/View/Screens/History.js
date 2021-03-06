@@ -5,10 +5,56 @@ import { Line } from "react-chartjs-2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 
-function History() {
+function History({ darkMode }) {
+  var styles = {
+    bmBurgerButton: {
+      position: "absolute",
+      width: "5vw",
+      height: "5vh",
+      left: "5%",
+      top: "3vh",
+    },
+    bmBurgerBars: {
+      background: "white",
+    },
+    bmBurgerBarsHover: {
+      background: "#a90000",
+    },
+    bmCrossButton: {
+      height: "24px",
+      width: "24px",
+    },
+    bmCross: {
+      background: "#bdc3c7",
+    },
+    bmMenuWrap: {
+      position: "fixed",
+      height: "100%",
+    },
+    bmMenu: {
+      background: darkMode ? "#373A47" : "#757B95",
+      padding: "2.5em 1.5em 0",
+      fontSize: "1.15em",
+    },
+    bmMorphShape: {
+      fill: "#373a47",
+    },
+    bmItemList: {
+      color: "white",
+      padding: "0.8em",
+    },
+    bmItem: {
+      display: "inline-block",
+    },
+    bmOverlay: {
+      background: "rgba(0, 0, 0, 0.3)",
+    },
+  };
+
   const [battery, setBattery] = useState([]);
   const [times, setTimes] = useState([]);
   const [chartData, setChartData] = useState({});
+  const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
     // send http request
@@ -35,7 +81,7 @@ function History() {
           label: "Battery Level",
           fill: true,
           lineTension: 0.1,
-          backgroundColor: "rgba(75,192,192,0.4)",
+          backgroundColor: darkMode ? "#6797A7" : "#436875",
           borderColor: "rgba(75,192,192,1)",
           borderCapStyle: "butt",
           borderDash: [],
@@ -54,7 +100,29 @@ function History() {
         },
       ],
     });
-  }, [battery, times]);
+    setChartOptions({
+      scales: {
+        xAxes: [
+          {
+            gridLines: { color: "rgba(255,255,255,0.4)" },
+            ticks: { fontColor: "rgba(255,255,255,1)" },
+          },
+        ],
+        yAxes: [
+          {
+            gridLines: { color: "rgba(255,255,255,0.4)" },
+            ticks: { fontColor: "rgba(255,255,255,1)" },
+          },
+        ],
+      },
+      legend: {
+        labels: {
+          // This more specific font property overrides the global property
+          fontColor: "white",
+        },
+      },
+    });
+  }, [battery, times, darkMode]);
 
   // new Date(129031293102)
 
@@ -65,56 +133,11 @@ function History() {
       styles={styles}
       isOpen={false}
     >
-      <p style={{fontSize:25}}>Battery History</p>
-      <Line data={chartData} />
+      <p style={{ fontSize: 25 }}>Battery History</p>
+      <Line data={chartData} options={chartOptions} />
       {/* Render Battery components (maybe make a battery table component in Components folder*/}
     </Menu>
   );
 }
-
-var styles = {
-  bmBurgerButton: {
-    position: "absolute",
-    width: "5vw",
-    height: "5vh",
-    left: "5%",
-    top: "3vh",
-  },
-  bmBurgerBars: {
-    background: "white",
-  },
-  bmBurgerBarsHover: {
-    background: "#a90000",
-  },
-  bmCrossButton: {
-    height: "24px",
-    width: "24px",
-  },
-  bmCross: {
-    background: "#bdc3c7",
-  },
-  bmMenuWrap: {
-    position: "fixed",
-    height: "100%",
-  },
-  bmMenu: {
-    background: "#373a47",
-    padding: "2.5em 1.5em 0",
-    fontSize: "1.15em",
-  },
-  bmMorphShape: {
-    fill: "#373a47",
-  },
-  bmItemList: {
-    color: "#b8b7ad",
-    padding: "0.8em",
-  },
-  bmItem: {
-    display: "inline-block",
-  },
-  bmOverlay: {
-    background: "rgba(0, 0, 0, 0.3)",
-  },
-};
 
 export default History;

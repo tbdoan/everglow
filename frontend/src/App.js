@@ -27,13 +27,13 @@ function App() {
   return (
     <div id="wholeAssApp" className={darkMode ? "dark" : "light"}>
       <div>
-        <History />
+        <History darkMode={darkMode} />
       </div>
       <div>
         <Settings switchFunction={switchFunction} darkMode={darkMode} />
       </div>
       <div>
-        <Main darkMode={darkMode}/>
+        <Main darkMode={darkMode} />
       </div>
     </div>
   );

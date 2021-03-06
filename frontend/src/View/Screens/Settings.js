@@ -39,6 +39,51 @@ function RedditTextField(props) {
 }
 
 function Settings({ switchFunction, darkMode }) {
+  var styles = {
+    bmBurgerButton: {
+      position: "absolute",
+      width: "5vw",
+      height: "5vh",
+      right: "5%",
+      top: "3vh",
+    },
+    bmBurgerBars: {
+      background: "white",
+    },
+    bmBurgerBarsHover: {
+      background: "#a90000",
+    },
+    bmCrossButton: {
+      height: "24px",
+      width: "24px",
+    },
+    bmCross: {
+      background: "#bdc3c7",
+    },
+    bmMenuWrap: {
+      position: "fixed",
+      height: "100%",
+    },
+    bmMenu: {
+      background: darkMode ? "#373A47" : "#757B95",
+      padding: "2.5em 1.5em 0",
+      fontSize: "1.15em",
+    },
+    bmMorphShape: {
+      fill: "#373a47",
+    },
+    bmItemList: {
+      color: "white",
+      padding: "0.8em",
+    },
+    bmItem: {
+      display: "inline-block",
+    },
+    bmOverlay: {
+      background: "rgba(0, 0, 0, 0.3)",
+    },
+  };
+
   //const [show, setShow] = useState(false)
   const [currentName, setCurrentName] = useState();
 
@@ -50,7 +95,7 @@ function Settings({ switchFunction, darkMode }) {
       isOpen={false}
       width={"360px"}
     >
-      <p style={{fontSize:25}}>Settings</p>
+      <p style={{ fontSize: 25 }}>Settings</p>
       <br />
 
       <p>Change Name</p>
@@ -98,50 +143,5 @@ function Settings({ switchFunction, darkMode }) {
     </Menu>
   );
 }
-
-var styles = {
-  bmBurgerButton: {
-    position: "absolute",
-    width: "5vw",
-    height: "5vh",
-    right: "5%",
-    top: "3vh",
-  },
-  bmBurgerBars: {
-    background: "white",
-  },
-  bmBurgerBarsHover: {
-    background: "#a90000",
-  },
-  bmCrossButton: {
-    height: "24px",
-    width: "24px",
-  },
-  bmCross: {
-    background: "#bdc3c7",
-  },
-  bmMenuWrap: {
-    position: "fixed",
-    height: "100%",
-  },
-  bmMenu: {
-    background: "#373a47",
-    padding: "2.5em 1.5em 0",
-    fontSize: "1.15em",
-  },
-  bmMorphShape: {
-    fill: "#373a47",
-  },
-  bmItemList: {
-    color: "#b8b7ad",
-    padding: "0.8em",
-  },
-  bmItem: {
-    display: "inline-block",
-  },
-  bmOverlay: {
-    background: "rgba(0, 0, 0, 0.3)",
-  },
-};
 
 export default Settings;
