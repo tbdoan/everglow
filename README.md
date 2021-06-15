@@ -1,4 +1,4 @@
-## Everglow
+## Everglow 
 
 ## Project Layout
 - **backend**: backend stuff
@@ -17,7 +17,9 @@
             - __index.css__: the main css stylesheet, should be referred to by all css files in **pages** and **components**. It refers to __reset.css__ and __typography.css__
             - __reset.css__: utility css file, reduces browser inconsistencies
             - __typography.css__: provides semantic html components for text. Corresponding to the design system traits on the Figma, use `<h1>` for Title, `<h2>` for Subtitle, `<h3>` for Link, and `<p>` for Paragraph, and adjust the font size as needed.
-            
+
+## See it here
+https://everglow.site/
 ## Branches
 
 * Choose *short* and *descriptive* names:
